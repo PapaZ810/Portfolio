@@ -1,14 +1,14 @@
 {% extends 'page/main.html' %}
 {% load static %}
-{% block title %} Home {% endblock %}
+{% block title %}Home{% endblock %}
 {% block body %}
-    <div class="container roboto-medium text-mauve text-center" style="margin-left: 3em">
-        <div class="row row-cols-1">
-            <div class="col-12 bg-black">
+    <div class="container text-mauve text-center w-auto" style="margin-left: 3rem">
+        <div class="row justify-content-center">
+            <div class="col align-self-start bg-black" style="max-width: 60em; min-height: 50%">
                 <h1>Welcome to Zoe's Portfolio!</h1>
-                <img src="{% static 'images/zoe.jpg' %}" alt="Zoe" class="mw-25 mh-25 p-3" style="max-width: 25%">
+                <img src="{% static 'images/zoe.jpg' %}" alt="Zoe" class="p-3">
             </div>
-            <div class="col-6 bg-black">
+            <div class="col align-self-end bg-black" style="max-width: 30em">
                 <p>Hello! My name is Zoe, and I am a recent Computer Science graduate from Westminster University</p>
             </div>
         </div>

@@ -1,3 +1,8 @@
 from django.contrib import admin
+from .models import *
 
-# Register your models here.
+
+admin.site.site_header = 'Portfolio Admin Panel'
+admin.site.site_title = 'Portfolio Admin Panel'
+
+admin.site.register(Project)
