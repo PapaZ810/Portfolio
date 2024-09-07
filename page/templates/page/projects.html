@@ -1,15 +1,15 @@
 {% extends 'page/main.html' %}
 {% block title %}Projects{% endblock %}
 {% block body %}
-    <div class="container w-auto bg-primary" style="margin-left: 3rem">
-        <h1 class="text-mauve">My Previous Projects</h1>
-        <div class="w-50 h-25 d-inline-flex align-items-center justify-content-center" style="min-height: 50%">
+    <div class="container ms-5">
+        <h1 class="text-mauve my-3">My Previous Projects</h1>
+        <div class="d-inline-flex w-auto h-auto align-items-center justify-content-center">
             {% for project in projects %}
-                    <div class="card text-center text-bg-danger border-white" style="width: 18rem;">
-                        <a href="home.html" class="text-mauve">
-                            <h3 class="card-header">{{ project.title }}</h3>
+                    <div class="card text-center text-mauve m-1" style="width: 18rem; background-color: #613885;">
+                        <a href="/" class="text-warning" style="text-decoration: none">
+                            <h5 class="card-header">{{ project.title }}</h5>
                             <div class="card-body">
-                                <p class="card-text">there is text here</p>
+                                <p class="card-text">{{ project.short_description }}</p>
                             </div>
                         </a>
                     </div>
