@@ -1,13 +1,13 @@
 .bg-pink {
-    background: #FECDF9;
+    background: #FECDF9!important;
 }
 
 .text-mauve{
-    color: #493146;
+    color: #493146!important;
 }
 
 .bg-black {
-    background: #000000;
+    background: #000000!important;
 }
 
 .roboto-medium {
