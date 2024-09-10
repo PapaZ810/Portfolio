@@ -1,12 +1,14 @@
 {% extends 'page/main.html' %}
+{% load static %}
 {% block title %}Projects{% endblock %}
 {% block body %}
     <div class="container ms-5">
-        <h1 class="text-mauve my-3">Previous Projects</h1>
+        <h1 class="text-thistle my-3">Previous Projects</h1>
         <div class="d-inline-flex w-auto h-auto align-items-center justify-content-center">
             {% for project in projects %}
-                    <div class="card text-center text-mauve m-1" style="width: 18rem; background-color: #613885;">
-                        <a href="/project/{{ project.id }}" class="text-warning" style="text-decoration: none">
+                    <div class="card text-center text-thistle m-1 bg-grayblue" style="width: 18rem;">
+                        <a href="{{ project.id }}" class="text-dark-blue" style="text-decoration: none;">
+                            <img src="{% static project.image.url %}" class="card-img-top" alt="{{ project.title }}">
                             <h5 class="card-header">{{ project.title }}</h5>
                             <div class="card-body">
                                 <p class="card-text">{{ project.short_description }}</p>

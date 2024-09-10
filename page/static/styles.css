@@ -1,14 +1,17 @@
-.bg-pink {
-    background: #FECDF9!important;
+.bg-teal {
+    background: #004555!important;
 }
 
-.text-mauve{
-    color: #493146!important;
+.bg-grayblue {
+    background: #94a7f2!important;
 }
 
+.text-thistle {
+    color: #c3beee!important;
+}
 
-.text-pink {
-    color: #F2D0FA!important;
+.text-dark-blue {
+    color: #052f65!important;
 }
 
 .roboto-medium {
