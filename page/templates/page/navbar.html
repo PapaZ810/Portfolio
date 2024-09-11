@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg bg-grayblue">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse">
+            <div class="navbar-nav text-dark-blue">
+                <a class="nav-link" href="{% url 'home' %}">Home</a>
+                <div class="btn-group">
+                    <button type="button" class="btn nav-link" onclick="window.location.href='/projects/'">Projects</button>
+                    <button type="button" class="btn nav-link dropdown-toggle dropdown-toggle-split" href="{% url 'projects' %}" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="visually-hidden">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu bg-grayblue">
+                        {% for project in projects %}
+                            <li><a class="dropdown-item" href="{% url 'project' project.id %}">{{ project.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
