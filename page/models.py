@@ -11,3 +11,9 @@ class Project(models.Model):
         return self.title
 
 
+class Home(models.Model):
+    bioText = models.TextField()
+
+    def __str__(self):
+        return "Home Page"
+
