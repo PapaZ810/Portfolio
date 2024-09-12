@@ -9,7 +9,8 @@ context = {
 
 class HomeView(TemplateView):
     template_name = 'page/home.html'
-    extra_context = context.update({'home': Home.objects.first()})
+    context.update({'home': Home.objects.first()})
+    extra_context = context
     context_object_name = 'home'
 
 
