@@ -12,7 +12,7 @@ class Project(models.Model):
 
 
 class Home(models.Model):
-    bioText = models.TextField()
+    bio_text = models.TextField()
 
     def __str__(self):
         return "Home Page"

@@ -16,7 +16,10 @@ def fill_projects():
 
 def run():
     Home.objects.update_or_create(
-        bioText="Hello! My name is Zoe, and I am a recent Computer Science graduate from Westminster University."
+        bio_text="""Hello! My name is Zoe, and I am a recent Computer Science graduate from Westminster University. 
+        I have a huge penchant for problem solving and I love learning. 
+        Computers and their intricacies are my passion, as I have been curious about them since I was 10 years old. 
+        I built my first computer by myself from parts list to completion when I was 15 and started programming at 17."""
     )
     fill_projects()
 
