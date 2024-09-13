@@ -14,6 +14,18 @@ class Project(models.Model):
 class Home(models.Model):
     bio_text = models.TextField()
 
+    class Meta:
+        verbose_name_plural = "Home"
+
     def __str__(self):
-        return "Home Page"
+        return "Home"
+
+
+class Skill(models.Model):
+    name = models.CharField(max_length=50)
+    logo = models.ImageField(upload_to='')
+    experience = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
 

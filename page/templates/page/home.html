@@ -2,15 +2,50 @@
 {% load static %}
 {% block title %}Home{% endblock %}
 {% block body %}
+    <style>
+    .skill img {
+        max-width: 15rem;
+    }
+
+    .skill {
+        transition: all 0.25s;
+    }
+
+    .skill:hover {
+        transform: scale(1.1);
+        background-color: #94a7f2;
+    }
+
+    .skill div {
+        transition: display 0.25s, opacity 0.25s;
+    }
+
+    .skill:not(:hover) div {
+        display: none;
+        opacity: 0;
+    }
+    </style>
     <div class="container text-thistle ms-5 text-center mt-4 w-auto">
         <div class="row justify-content-center align-items-center">
-            <div class="col" style="max-width: 60em;">
+            <div class="col" style="max-width: 60rem;">
                 <h1>Welcome to Zoe's Portfolio!</h1>
-                <img src="{% static 'images/zoe.jpg' %}" alt="Zoe" class="rounded-1 p-3">
+                <img src="{% static 'images/zoe.jpg' %}" alt="Zoe" class="rounded-5 p-3">
             </div>
-            <div class="col" style="max-width: 60em">
+            <div class="col" style="max-width: 60rem">
                 <p class="h5">{{ home.bio_text }}</p>
             </div>
+        </div>
+        <div class="row row-cols-4 pt-5">
+            {% for logo in skills %}
+                <div class="col skill">
+                    <img src="{% static logo.logo.url %}" alt="{{ logo.name }}" class="rounded-1 m-3">
+                    <div class="text-dark-blue">
+                        <h5>{{ logo.name }}</h5>
+                        <hr>
+                        <p>{{ logo.experience }}</p>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
     </div>
 {% endblock body %}

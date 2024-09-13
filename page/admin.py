@@ -7,3 +7,4 @@ admin.site.site_title = 'Portfolio Admin Panel'
 
 admin.site.register(Project)
 admin.site.register(Home)
+admin.site.register(Skill)
