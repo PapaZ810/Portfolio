@@ -25,8 +25,8 @@
         opacity: 0;
     }
     </style>
-    <div class="container text-thistle ms-5 text-center mt-4 w-auto">
-        <div class="row justify-content-center align-items-center">
+    <div class="container text-thistle text-center mt-4 w-auto">
+        <div class="row d-flex justify-content-center align-items-center">
             <div class="col" style="max-width: 60rem;">
                 <h1>Welcome to Zoe's Portfolio!</h1>
                 <img src="{% static 'images/zoe.jpg' %}" alt="Zoe" class="rounded-5 p-3">
@@ -35,7 +35,7 @@
                 <p class="h5">{{ home.bio_text }}</p>
             </div>
         </div>
-        <div class="row row-cols-4 pt-5">
+        <div class="row d-flex row-cols-4 pt-5">
             {% for logo in skills %}
                 <div class="col skill">
                     <img src="{% static logo.logo.url %}" alt="{{ logo.name }}" class="rounded-1 m-3">
@@ -47,5 +47,35 @@
                 </div>
             {% endfor %}
         </div>
+        <div class="row justify-content-center mt-5">
+            <div class="col align-items-center">
+                <h1>Contact Me!</h1>
+                <form method="post">
+                    {% csrf_token %}
+                    <p class="text-danger">{{ form.non_field_errors }}</p>
+                    <div class="mb-3">
+                        <label for="{{ form.email.id_for_label }}" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" name="email" id="{{ form.email.id_for_label }}" placeholder="name@example.com" style="background: #c3beee;" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="{{ form.subject.id_for_label }}" class="form-label">Subject</label>
+                        <input type="text" class="form-control" name="subject" id="{{ form.subject.id_for_label }}" placeholder="Subject" style="background: #c3beee;" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="{{ form.message.id_for_label }}" class="form-label">Message</label>
+                        <textarea class="form-control" name="message" id="{{ form.message.id_for_label }}" rows="3" style="background: #c3beee;" required></textarea>
+                    </div>
+                    <input class="btn bg-grayblue text-dark-blue p-2 px-5" type="submit" id="btn" value="Send">
+                </form>
+            </div>
+            <div class="col align-items-center">
+                <h5><a class="text-thistle" href="mailto: work@zoed.dev">Email</a></h5>
+                <br>
+                <h5><a class="text-thistle" href="https://www.github.com/PapaZ810">Github</a></h5>
+                <br>
+                <h5><a class="text-thistle" href="https://www.linkedin.com/in/zachary-durham-872081191/">Linkedin</a></h5>
+            </div>
+        </div>
     </div>
+    <div style="margin-bottom: 20em"></div>
 {% endblock body %}
