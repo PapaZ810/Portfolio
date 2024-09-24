@@ -118,7 +118,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
+import mimetypes
+mimetypes.add_type("text/css", ".css", True)
+
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_URL = '/images/'
 MEDIA_ROOT = BASE_DIR / 'page/static/images/'
 
