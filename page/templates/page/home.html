@@ -29,7 +29,7 @@
         <div class="row d-flex justify-content-center align-items-center">
             <div class="col" style="max-width: 60rem;">
                 <h1>Welcome to Zoe's Portfolio!</h1>
-                <img src="{% static 'images/zoe.jpg' %}" alt="Zoe" class="rounded-5 p-3 img-fluid">
+                <img src="{% static 'images/zoe.jpg' %}" alt="Zoe" class="rounded-5 p-3 img-fluid" style="min-width: 20rem;">
             </div>
             <div class="col" style="max-width: 60rem">
                 <p class="h5">{{ home.bio_text }}</p>
@@ -47,8 +47,8 @@
                 </div>
             {% endfor %}
         </div>
-        <div class="row justify-content-center mt-5">
-            <div class="col align-items-center">
+        <div class="row justify-content-center align-items-center mt-5">
+            <div class="col align-items-center" style="min-width: 20rem">
                 <h1>Contact Me!</h1>
                 <form method="post">
                     {% csrf_token %}
