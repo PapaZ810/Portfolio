@@ -185,3 +185,5 @@ fabric.properties
 # .idea
 
 /page/migrations/
+/page/static/images/
+/db.sqlite3
