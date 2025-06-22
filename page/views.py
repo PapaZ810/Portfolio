@@ -34,13 +34,11 @@ class HomeView(FormView):
                     fail_silently=False,
                     connection=mail.get_connection(),
                 )
-                print('Email sent')
                 return super().form_valid(form)
             except BadHeaderError:
                 form.add_error(None, 'Invalid header found.')
                 return self.form_invalid(form)
         else:
-            print('Email not sent')
             form.add_error(None, 'Invalid input')
             return self.form_invalid(form)
 
