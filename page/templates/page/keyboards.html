@@ -1,0 +1,19 @@
+{% extends 'page/main.html' %}
+{% load static %}
+{% block title %}Keyboards{% endblock %}
+{% block body %}
+    <div class="container">
+        <h1 class="text-thistle my-3">My Keyboards</h1>
+        <div class="row d-flex row-cols-auto-4 h-auto align-items-center justify-content-center">
+            {# TODO: Put picture of all keyboards here #}
+            {% for keyboard in keyboards %}
+                    <div class="card col text-center text-thistle m-1 bg-grayblue" style="max-width: 18rem; min-width: 18rem">
+                        <a href="{{ keyboard.id }}" class="text-dark-blue" style="text-decoration: none;">
+                            <img src="{% static keyboard.image.url %}" class="card-img-top" alt="{{ keyboard.title }}">
+                            <h5 class="card-header">{{ keyboard.title }}</h5>
+                        </a>
+                    </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

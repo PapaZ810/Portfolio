@@ -7,7 +7,8 @@ from django.core.mail import send_mail, BadHeaderError
 
 
 context = {
-    'projects': Project.objects.only('id', 'title')
+    'projects': Project.objects.only('id', 'title'),
+    'keyboards': Keyboard.objects.only('id', 'title')
 }
 
 
@@ -55,3 +56,13 @@ class ProjectView(DetailView):
     template_name = 'page/project.html'
     extra_context = context
 
+class KeyboardsView(ListView):
+    model = Keyboard
+    context_object_name = 'keyboards'
+    template_name = 'page/keyboards.html'
+
+class KeyboardView(DetailView):
+    model = Keyboard
+    context_object_name = 'keyboard'
+    template_name = 'page/keyboard.html'
+    extra_context = context

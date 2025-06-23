@@ -1,0 +1,11 @@
+{% extends 'page/main.html' %}
+{% block title %}{{ keyboard.title }}{% endblock %}
+{% block body %}
+    <div class="container">
+        <h1 class="text-thistle my-3">{{ keyboard.title }}</h1>
+        <hr style="border-color: #c3beee; border-width: 3px">
+        <div class="d-inline-flex w-auto h-auto align-items-center justify-content-center">
+            <h5 class="text-thistle">{{ keyboard.text | safe }}</h5>
+        </div>
+    </div>
+{% endblock %}

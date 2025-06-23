@@ -15,10 +15,22 @@
                         {% endfor %}
                     </ul>
                 </div>
+                <div class="btn-group">
+                    <button type="button" class="btn nav-link" onclick="window.location.href='/keyboards/'">Keyboards</button>
+                    <button type="button" class="btn nav-link dropdown-toggle dropdown-toggle-split"
+                            href="{% url 'keyboards' %}" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="visually-hidden">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu bg-grayblue">
+                        {% for keyboard in keyboards %}
+                            <li><a class="dropdown-item" href="{% url 'keyboard' keyboard.id %}">{{ keyboard.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
                 <a class="nav-link icon-link" target="_blank" rel="norefferer" href="https://github.com/PapaZ810/Portfolio">
-                    Source
-                    <i class="bi bi-box-arrow-up-right" style="width: 1em"></i>
-                </a>
+                        Source
+                        <i class="bi bi-box-arrow-up-right" style="width: 1em"></i>
+                    </a>
             </div>
         </div>
     </div>

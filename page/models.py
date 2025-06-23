@@ -11,6 +11,15 @@ class Project(models.Model):
         return self.title
 
 
+class Keyboard(models.Model):
+    title = models.CharField(max_length=50)
+    image = models.ImageField(upload_to='')
+    text = models.TextField()
+
+    def __str__(self):
+        return self.title
+
+
 class Home(models.Model):
     bio_text = models.TextField()
 

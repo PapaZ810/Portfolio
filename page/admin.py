@@ -16,3 +16,4 @@ class ProjectAdmin(admin.ModelAdmin):
 admin.site.register(Project, ProjectAdmin)
 admin.site.register(Home)
 admin.site.register(Skill)
+admin.site.register(Keyboard)
