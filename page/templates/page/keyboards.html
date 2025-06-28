@@ -5,7 +5,10 @@
     <div class="container">
         <h1 class="text-thistle my-3">My Keyboards</h1>
         <div class="row d-flex row-cols-auto-4 h-auto align-items-center justify-content-center">
-            {# TODO: Put picture of all keyboards here #}
+            <img src="{% static 'images/Keyboards.jpg' %}" class="rounded-5 p-3 img-fluid" alt="All of my Keyboards that I currently use in one picture!">
+            <br>
+            <br>
+            <hr style="border-color: #c3beee; border-width: 3px">
             {% for keyboard in keyboards %}
                     <div class="card col text-center text-thistle m-1 bg-grayblue" style="max-width: 18rem; min-width: 18rem">
                         <a href="{{ keyboard.id }}" class="text-dark-blue" style="text-decoration: none;">

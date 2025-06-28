@@ -11,6 +11,8 @@ context = {
     'keyboards': Keyboard.objects.only('id', 'title')
 }
 
+blocked_sender_list = ["captainontario14@gmail.com", "zdurham343@gmail.com",]
+
 
 class HomeView(FormView):
     form_class = EmailForm
@@ -25,6 +27,9 @@ class HomeView(FormView):
         subject = form.cleaned_data['subject']
         message = form.cleaned_data['message']
         email = form.cleaned_data['email']
+        if email in blocked_sender_list:
+            form.add_error(None, 'Invalid input')
+            return self.form_invalid(form)
         if subject and message and email:
             try:
                 send_mail(
@@ -48,6 +53,7 @@ class ProjectsView(ListView):
     model = Project
     context_object_name = 'projects'
     template_name = 'page/projects.html'
+    extra_context = context
 
 
 class ProjectView(DetailView):
@@ -60,6 +66,7 @@ class KeyboardsView(ListView):
     model = Keyboard
     context_object_name = 'keyboards'
     template_name = 'page/keyboards.html'
+    extra_context = context
 
 class KeyboardView(DetailView):
     model = Keyboard
