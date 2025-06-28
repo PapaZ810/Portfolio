@@ -11,8 +11,6 @@ context = {
     'keyboards': Keyboard.objects.only('id', 'title')
 }
 
-blocked_sender_list = ["captainontario14@gmail.com", "zdurham343@gmail.com",]
-
 
 class HomeView(FormView):
     form_class = EmailForm
@@ -27,14 +25,11 @@ class HomeView(FormView):
         subject = form.cleaned_data['subject']
         message = form.cleaned_data['message']
         email = form.cleaned_data['email']
-        if email in blocked_sender_list:
-            form.add_error(None, 'Invalid input')
-            return self.form_invalid(form)
-        elif subject and message and email:
+        if subject and message and email:
             try:
                 send_mail(
                     subject,
-                    message,
+                    email + "\n" + message,
                     email,
                     ['work@zoed.dev'],
                     fail_silently=False,
