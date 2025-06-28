@@ -30,7 +30,7 @@ class HomeView(FormView):
         if email in blocked_sender_list:
             form.add_error(None, 'Invalid input')
             return self.form_invalid(form)
-        if subject and message and email:
+        elif subject and message and email:
             try:
                 send_mail(
                     subject,
